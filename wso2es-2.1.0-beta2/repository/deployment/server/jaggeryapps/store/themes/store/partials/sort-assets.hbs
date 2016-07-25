@@ -1,0 +1,42 @@
+<!---
+IMPORTANT: The Sorting links are rewritten in by asset-core.js by targeting the sorting-option class name
+--->
+<div class="es-col-lg-12 col-lg-12">
+    <div class="ast-container ">
+        <div class="container-fluid padding-none ">
+            <div class="title">
+                <a class="asset-type-{{rxt.shortName}}"
+                   href="{{tenantedUrl "/assets/"}}{{rxt.shortName}}/list?">{{rxt.pluralLabel}}</a></div>
+            <!-- sorting start-->
+            {{#if assets}}
+                <div class="sort-asset-container">
+                    <div class="pull-right">
+                        <ul class="nav nav-pills navbar-mid remove-margin" role="tablist">
+                            <li data-toggle="tooltip" title="sort result">
+                                <button class="btn btn-default" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fw {{ sorting.selected.helpIcon }} fw-2x"></i>
+                                    <span>Sort by : <strong>{{ sorting.selected.help }} </strong></span>
+                                </button>
+                                <ul class="dropdown-menu arrow arrow-top-right dark sort-list add-margin-top-2x">
+                                    <li class="dropdown-header">Sort by</li>
+                                    {{#each sorting.list}}
+                                        <li><a
+                                                data-column="@index"
+                                                data-sort-by-query="{{sortBy.name}}"
+                                                data-sort-query="{{sortNext}}"
+                                                class="sorting-option {{#if active}}{{sortIcon}} active {{/if}} {{sortBy.label}}"
+                                                href='{{tenantedUrl ""}}/assets/{{../rxt.shortName}}/list?sortBy={{sortBy.name}}&sort={{sortNext}}&{{query}}'
+                                        >
+                                            {{sortBy.label}}
+                                        </a>
+                                        </li>
+                                    {{/each}}
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</div>

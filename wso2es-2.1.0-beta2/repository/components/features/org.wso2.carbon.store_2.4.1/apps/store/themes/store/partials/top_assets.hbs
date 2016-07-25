@@ -1,0 +1,55 @@
+<!-- Popular assets listing till we figure out a way to display it elegentely
+{{#if popularAssets}}
+<section>
+    <div class="container-fluid row padding-double center">
+        {{#each popularAssets}}
+            {{#attributes}}
+                <div class="freatured-assets-col col-xs-12 col-sm-6 col-md-3  "><a href="{{tenantedUrl "/assets"}}/{{../type}}/details/{{../id}}">
+                    <img class="img-responsive" src="{{#if ../banner}}{{tenantedUrl ""}}/storage/{{../../type}}/{{../../id}}/{{../../banner}}{{/if}}"></a> </div>
+            {{/attributes}}
+        {{/each}}
+    </div>
+</section>
+{{/if}}
+--->
+<div class="top-assets-container">
+    {{#if recentAssetsByType}}
+        {{#each recentAssetsByType}}
+            <div class="ast-container " id="ast-container">
+                <div class="container-fluid ">
+                    <div class="title">
+                        {{#if ../assetMeta.q}}
+                            <a class="asset-type-{{rxt.shortName}}" href="{{tenantedUrl "/assets/"}}{{rxt.shortName}}/list?q={{../../assetMeta.q}}">
+                                {{rxt.pluralLabel}}
+                            </a>
+                        {{else}}
+                            <a class="asset-type-{{rxt.shortName}}" href="{{tenantedUrl "/assets/"}}{{rxt.shortName}}/list?">
+                                Recent
+                                {{rxt.pluralLabel}}
+                            </a>
+                        {{/if}}
+                    </div><!--title-->
+                    {{#if moreAssets}}
+                        {{#if ../assetMeta.q}}
+                            <div class="float-right"><a href="{{tenantedUrl "/assets/"}}{{rxt.shortName}}/list?q={{../../assetMeta.q}}" class="more">
+                                <span class="asset-more-in-listing">See More</span></a></div>
+                        {{else}}
+                            <div class="float-right"><a href="{{tenantedUrl "/assets/"}}{{rxt.shortName}}/list" class="more">
+                                <span class="asset-more-in-listing">See More</span></a></div>
+                        {{/if}}
+                    {{/if}}
+                    <hr>
+                </div>
+            </div>
+            {{#dyn asset=rxt.shortName}}
+                    {{>assets}}
+            {{/dyn}}
+        {{/each}}
+    {{else}}
+        {{#if cuser.isAnon}}
+            <div class="top-assets-empty-assert">{{t "There are no publicly available assets. Please login to access your assets"}}</div>
+        {{else}}
+            <div class="top-assets-empty-assert">{{t "There are no assets available."}}</div>
+        {{/if}}
+    {{/if}}
+</div>

@@ -1,0 +1,25 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+WSO2 Enterprise Store Feature
+
+
+From: 'an unknown organization'
+  - httpclient.wso2 (http://wso2.org) org.apache.httpcomponents.wso2:httpclient:bundle:4.1.1-wso2v1
+
+  - httpcore.wso2 (http://wso2.org) org.apache.httpcomponents.wso2:httpcore:bundle:4.1.0-wso2v1
+
+
+From: 'Apache Software Foundation' (http://www.apache.org)
+  - Apache Log4j (http://logging.apache.org/log4j/1.2/) log4j:log4j:bundle:1.2.17
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'WSO2 Inc' (http://wso2.com)
+  - org.wso2.store.util (http://wso2.org) org.wso2.carbon.store:org.wso2.store.util:jar:2.4.1
+    License: Apache License Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
+
+
+
+

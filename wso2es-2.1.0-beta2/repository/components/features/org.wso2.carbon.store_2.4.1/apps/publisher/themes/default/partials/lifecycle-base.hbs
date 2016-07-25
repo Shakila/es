@@ -1,0 +1,42 @@
+<div class="row">
+
+    <div id='lifecycle-global-notifications' class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div id='lifecycle-asset-details'>
+            {{#with assets}}
+            <div class="well asset-well">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 thumbnail-width-fixer">
+                            {{>asset-thumbnail .}}
+                        </div>
+                        <div class="col-lg-10 col-md-10">
+                            <h1 class="asset-name">{{name}}</h1>
+                            {{#if version}}
+                                <h5 class="ast-ver ast-details">Version : {{version}}</h5>
+                            {{/if}}
+                            {{#if lifecycleState}}
+                                <h5 class="ast-lc ast-details">{{lifecycle}} : {{lifecycleState}}</h5>
+                            {{/if}}
+                            {{#if createdDate}}
+                            <div class="well-description padding-bottom-lg">{{createdDate}}</div>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/with}}
+        </div>
+        <!-- Lifecycle Management UI -->
+        <div>
+          {{#if meta.lifecycleMgtViewEnabled}}
+            {{>lifecycle-management .}}
+          {{/if}}
+        </div>
+        {{> lifecycle-selection-area}}
+    </div>
+    <div id='lifecycle-information' class="lifecycle-information-area col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        {{> lifecycle-information}}
+    </div>
+    {{> lifecycle-rendering-view}}
+</div>

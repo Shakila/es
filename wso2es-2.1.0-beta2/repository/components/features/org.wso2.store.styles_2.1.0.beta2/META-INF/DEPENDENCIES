@@ -1,0 +1,15 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+WSO2 Enterprise Store Styles Feature
+
+
+From: 'WSO2 Inc' (http://wso2.com)
+  - WSO2 Enterprise Store - UI styles (http://wso2.org) org.wso2.es:org.wso2.store.admin.styles:bundle:2.1.0-beta2
+    License: Apache License Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
+
+
+
+
